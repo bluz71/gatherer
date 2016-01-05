@@ -14,4 +14,13 @@ RSpec.describe ProjectsController, type: :controller do
       expect(assigns(:project)).to be_present
     end
   end
+
+  describe "graceful modification failures" do
+    it "fails create gracefully" do
+      action_stub = double(create: false, project: Project.new)
+      expect(CreatesProject).to receive(:new).and_return(action_stub)
+      post :create, project: { name: "Project Runway" }
+      expect(response).to render_template(:new)
+    end
+  end
 end
