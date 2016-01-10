@@ -58,4 +58,17 @@ RSpec.describe Project do
       expect(project).to be_on_schedule
     end
   end
+
+  describe "task order" do
+    let(:project) { project = Project.create(name: "Project") }
+
+    it "gives me the order of the first task in an empty project" do
+      expect(project.next_task_order).to eq(1)
+    end
+
+    it "gives me the order of the next task in a project" do
+      project.tasks.create(project_order: 3)
+      expect(project.next_task_order).to eq(4)
+    end
+  end
 end
