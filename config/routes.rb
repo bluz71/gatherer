@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :projects
+
+  devise_for :users
+  root "projects#index"
+
   resources :tasks do
     member do
       patch :up
@@ -6,5 +11,4 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :projects
 end
