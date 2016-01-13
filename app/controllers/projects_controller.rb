@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   def create
     @action = CreatesProject.new(
                 name: params[:project][:name],
-                task_string: params[:project][:tasks])
+                task_string: params[:project][:tasks] || "",
+                users: [current_user])
     success = @action.create
     if success
       redirect_to projects_path

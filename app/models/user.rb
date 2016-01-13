@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def can_view?(project)
-    return true if admin? || project.public?
-    projects.include?(project)
+    visible_projects.include?(project)
+  end
+
+  def visible_projects
+    return Project.all.to_a if admin?
+    (projects.to_a + Project.all_public).uniq.sort_by(&:id)
   end
 end

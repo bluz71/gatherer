@@ -4,6 +4,10 @@ class Project < ActiveRecord::Base
   has_many :tasks, -> { order(project_order: :asc) }
   validates :name, presence: true
 
+  def self.all_public
+    where(public: true)
+  end
+
   def Project.velocity_length_in_days
     21
   end

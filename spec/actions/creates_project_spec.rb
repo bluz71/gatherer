@@ -6,6 +6,13 @@ describe CreatesProject do
     creator.build
     expect(creator.project.name).to eq("Project Runway")
   end
+
+  it "adds users to the project" do
+    user = User.new
+    creator = CreatesProject.new(name: "Project Runway", users: [user])
+    creator.build
+    expect(creator.project.users).to eq([user])
+  end
 end
 
 describe "task string parsing" do
