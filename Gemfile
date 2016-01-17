@@ -40,6 +40,9 @@ group :development, :test do
 
   # Nicer 'rails console'.
   gem "irbtools-more", require: "irbtools/binding"
+
+  gem "jasmine-rails"
+  gem "poltergeist"
 end
 
 group :development do
