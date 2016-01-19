@@ -40,6 +40,13 @@ group :development, :test do
 
   # Nicer 'rails console'.
   gem "irbtools-more", require: "irbtools/binding"
+
+  gem "pry-rails"
+  gem "pry-byebug"
+  gem "pry-stack_explorer"
+  gem "pry-rescue"
+  gem "pry-doc"
+  gem "better_errors"
 end
 
 group :development do
