@@ -156,6 +156,12 @@ GEM
     orm_adapter (0.5.0)
     os (0.9.6)
     paint (1.0.0)
+    phantomjs (1.9.8.0)
+    poltergeist (1.8.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -174,12 +180,6 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    phantomjs (1.9.8.0)
-    poltergeist (1.8.1)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      multi_json (~> 1.0)
-      websocket-driver (>= 0.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -292,12 +292,12 @@ DEPENDENCIES
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
+  poltergeist
   pry-byebug
   pry-doc
   pry-rails
   pry-rescue
   pry-stack_explorer
-  poltergeist
   rails (= 4.2.4)
   rspec-rails (~> 3.2)
   sass-rails (~> 5.0)
