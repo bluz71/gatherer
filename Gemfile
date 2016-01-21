@@ -47,6 +47,8 @@ group :development, :test do
   gem "pry-rescue"
   gem "pry-doc"
   gem "better_errors"
+  gem "jasmine-rails"
+  gem "poltergeist"
 end
 
 group :development do
